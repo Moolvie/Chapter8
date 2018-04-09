@@ -57,7 +57,7 @@ if (isset($_POST['Submit'])) {
                 "(name, email, subscribe_date) VALUES " .
                 "('$SubscriberName', '$SubscriberEmail',
                 '$SubscriberDate')";
-            $QueryResult = $DBConnect->query($SQLstring);
+            $QueryResult = @mysqli_query($DBConnect, $SQLstring);
             if ($QueryResult === FALSE)
                 echo "<p>Unable to insert the values into the subscriber table </p>" 
                     . "<p>Error code " . mysqli_errno($DBConnect)
@@ -75,10 +75,10 @@ if (isset($_POST['Submit'])) {
     }
     else {
         $ShowForm = TRUE;
-       
+        $SubscriberName = "";
+        $SubscriberEmail = "";   
     }
-
-if ($ShowForm){
+if($ShowForm){
     ?>
     <form action="NewsletterSubscribe.php" method="POST">
     <p><strong>Your Name: </strong>
@@ -89,6 +89,7 @@ if ($ShowForm){
     </form>
         <?php
 }
+
 ?>
 </body>
 </html>

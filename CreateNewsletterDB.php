@@ -18,8 +18,7 @@
 <?php
 $DBName = "newsletter"; 
 $sql = "CREATE DATABASE $DBName";
-$DBConnect = mysqli_connect("localhost", "root", "!root"); 
-
+$DBConnect = mysqli_connect("localhost", "root", "crumplebatverifytree");
     if ($DBConnect === FALSE)    
         echo "<p>Connection error: " . mysqli_error() . "</p>\n"; 
     else { 

@@ -5,7 +5,7 @@
     // Filename: inc_db_newsletter.php
 
 $DBName = "newsletter"; 
-$DBConnect = @mysqli_connect("localhost", "root", "!root"); 
+$DBConnect = mysqli_connect("localhost", "root", "crumplebatverifytree", $DBName); 
     if ($DBConnect === FALSE)
       echo "<p>Connection error: " . mysqli_error() . "</p>\n"; 
     else {
