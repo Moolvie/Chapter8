@@ -57,12 +57,13 @@ if (isset($_POST['Submit'])) {
                 "(name, email, subscribe_date) VALUES " .
                 "('$SubscriberName', '$SubscriberEmail',
                 '$SubscriberDate')";
+        }
             $QueryResult = @mysqli_query($DBConnect, $SQLstring);
             if ($QueryResult === FALSE)
                 echo "<p>Unable to insert the values into the subscriber table </p>" 
                     . "<p>Error code " . mysqli_errno($DBConnect)
                     . ": " . mysqli_error($DBConnect) . "</p>";
-            }
+            
             else {
                 $SubscriberID = mysqli_insert_id($DBConnect);
                 echo "<p>" . htmlentities($SubscriberName) .
